@@ -22,13 +22,17 @@ this is the first Jenkins Freestyle Project which is mainly first stage of the a
                     * These Artifacts can be Archived in Jenkins Controller for later use. 
 
 ## Steps:
-                    * install the Jenkins and open the Jenkins Controller in the browser and Create a User 
-                    
-                    ![image](https://github.com/user-attachments/assets/1a42c2e4-30c4-4504-80fb-c80617e6ec57)
+                    * install the Jenkins and open the Jenkins Controller in the browser and Create a User ![image](https://github.com/user-attachments/assets/1a42c2e4-30c4-4504-80fb-c80617e6ec57)
                     
                     * Configure the Root/Main URL to access other resources in Jenkins Controller ![image](https://github.com/user-attachments/assets/1fbef7d3-caba-4e1a-a815-ba35a88b661b)
                     * now Jenkin is ready to use ![image](https://github.com/user-attachments/assets/b9a23e8b-08b0-459c-aaad-dafc804fe1c5)
                     * once Setup Process is Completed Controllers home Screen looks like this ![image](https://github.com/user-attachments/assets/4af23092-4de3-48fd-b765-9c65a59d8e58)
+                    * Crating the First Job. 
+                    * Configuring the Source Code Management, by entering the Repo URL. since it is a public repo so no need of Credentials 
+                    * Mentioning to perform actions on the specified Branch 
+                    * checking whether the Job is done by logging into the Remote server locally ![image](https://github.com/user-attachments/assets/728a128f-de31-4b29-ab9c-546197d983c7) ![image](https://github.com/user-attachments/assets/75402784-c7ea-4d2e-9efd-c26d2c1c964a)
+
+
 
 
 
