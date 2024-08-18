@@ -14,8 +14,7 @@ this is the first Jenkins Freestyle Project which is mainly first stage of the a
 
 
 #### What is a Freestyle Project in Jenkins?
-                    it is a classic and general purpose job , that gets the code from the SCM and execute the configured
-build steps Serially and then performs  post build actions like Archiving artifacts and sending email notifications
+                    it is a classic and general purpose job , that gets the code from the SCM and execute the configured build steps Serially and then performs  post build actions like Archiving artifacts and sending email notifications
 
 #### What Are Artifacts?
                     * An Artifact is a file that is created during pipeline or build and is im-mutable. 
