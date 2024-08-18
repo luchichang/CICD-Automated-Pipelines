@@ -22,4 +22,5 @@ this is the first Jenkins Freestyle Project which is mainly first stage of the a
                     * These Artifacts can be Archived in Jenkins Controller for later use. 
 
 ## Steps:
-                    * 
+                    * install the Jenkins and open the Jenkins Controller in the browser
+                    
