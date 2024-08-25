@@ -5,7 +5,14 @@ pipeline{
   // agent has the information of node to whom as we run
  // Groovy Script will be in smaller case and fields and value are seperated by spaces 
   agent any
- 
+
+// pipeline Script also Supports Custom and Predefined Environment variables 
+// Custom Environment Variables resides in the environment field 
+  environment{
+     // SYNTAX:  "VARIABLE_NAME" = "VALUE"
+         process = DevOps
+  }
+
   // holds all the stage
   stages{
     // individual stage
@@ -14,7 +21,12 @@ pipeline{
       steps{
        
         // shell command to execute in assgined node/agent
-          echo 'DevOps increases the efficiency of SDLC at the same time decreasing complexness'
+          echo 'DevOps increases the efficiency of SDLC at the same time decreasing complexness' 
+    
+
+// whenever calling the Custom ENV Variables it should be wrapped in the double quotes inorder to groovy interpret it as a Variable
+          echo " $process is a combination of Practices, tools and cultural philosophies that integrate and automate the process between Software Development and IT Team"
+    
       }
     }
   }
