@@ -1,0 +1,33 @@
+//Basic Template of Jenkins Declartive file
+//Pipeline is the Top most level
+pipeline{
+  
+  // agent has the information of node to whom as we run
+ // Groovy Script will be in smaller case and doesnt have ":" 
+  agent any
+ 
+  // holds all the stage
+  stages{
+    // individual stage
+    stage('test'){
+     // holds the collection of steps to execute
+      steps{
+       
+        // shell command to execute in assgined node/agent
+          echo 'DevOps increases the efficiency of SDLC at the same time decreasing complexness'
+      }
+    }
+  }
+
+  //this tag will execute the commands based on the build status or build status change
+  post{
+     //regardless of build status
+     always{
+        
+     }
+     success{ 
+     }
+     failure{
+     }
+  }
+}
