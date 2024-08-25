@@ -10,8 +10,13 @@ pipeline{
   }
 // adding the post action
   post{
+//on success
     success{
       echo "executed SuccessFully" 
+    }
+//on failure
+    failure{
+       echo "failed in env.BRANCHNAME"
     }
   }
 }
