@@ -3,8 +3,9 @@ pipeline{
   
   stages{
     stage("test"){
-      echo "before the Declarative pipeline Groovy Scripts are used for writing the pipeline file"
-      
+       steps{
+         echo "before the Declarative pipeline Groovy Scripts are used for writing the pipeline file"
+       }
     }
   }
 }
