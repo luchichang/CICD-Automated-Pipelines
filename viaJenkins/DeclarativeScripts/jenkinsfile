@@ -1,9 +1,9 @@
 //Basic Template of Jenkins Declartive file
-//Pipeline is the Top most level
+//Pipeline is the Top most level Field
 pipeline{
   
   // agent has the information of node to whom as we run
- // Groovy Script will be in smaller case and doesnt have ":" 
+ // Groovy Script will be in smaller case and fields and value are seperated by spaces 
   agent any
  
   // holds all the stage
