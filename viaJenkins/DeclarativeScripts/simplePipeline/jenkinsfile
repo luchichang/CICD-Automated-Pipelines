@@ -8,4 +8,10 @@ pipeline{
        }
     }
   }
+// adding the post action
+  post{
+    success{
+      echo "executed SuccessFully" 
+    }
+  }
 }
