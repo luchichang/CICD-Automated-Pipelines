@@ -1,4 +1,4 @@
-# creating the Basic Tekton Pipeline.
+# creating the Basic Tekton Pipeline
 
 ## Description,
    * Structuring a __Tekton Pipeline__ project and authoring Tekton Pipeline and tasks so that they are easy to use and parameterize. 
