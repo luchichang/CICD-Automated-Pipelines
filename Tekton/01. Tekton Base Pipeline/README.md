@@ -48,9 +48,13 @@ so we are creating the pipeline for automating this task
 ```bash
   tkn pipeline start --show-log <pipeline name>
 ```
+Parameters can be passed when pipeline start with "-p" option followed by parameter name and value
 ( NOTE: You can list the created pipeline by running 
 ```bash
   tkn pipeline list
 ```
 )
+
+
+
 

@@ -3,8 +3,12 @@ kind: Task
 metadata:
   name: hello-world
 spec:
+  params:
+    - name: message
+      description: message to the echo
+      type: string
   steps:
     - name: echo
       image: alpine:3
       command: [/bin/echo]
-      args: ["Hello World!"]
+      args: ["msg:",""]

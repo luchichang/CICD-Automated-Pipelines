@@ -3,7 +3,12 @@ kind: Pipeline
 metadata:
   name: hello-world-pipeline
 spec:
+  params:
+    - name: message
   tasks:
     - name: hello-pipeline-task
       taskRef:
-        name: hello-world 
+        name: hello-world
+      params:
+        - name: message
+          value: "$(params.message)" 
