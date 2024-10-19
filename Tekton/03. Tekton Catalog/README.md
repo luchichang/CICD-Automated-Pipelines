@@ -2,6 +2,10 @@
 
 ## Description
 
+## Objective, 
+- use the tekton cd Catalog to install the predefined or community written tasks
+- Describe the Parameters required to use the git clone task
+- Use the git-clone task in a Tekton pipeline to clone your Git Repository 
 
 ## pre-requisite
 - Tekton Catalog
@@ -11,6 +15,17 @@
 - Persistent Volume Claim
 - Name Spaces
 
+NOTE: for creating workspace in Persistent volume claim we need to create storage class first so it can be referenced in the __storageClassName__ in the pvc 
+
+to create the default storage class execute
+```bash
+  kubectl get storageclass
+```
+
 ## Enviornment Setup
 
 ## steps,
+* Install the task from the tekton hub 
+URL: https://hub.tekton.dev/tekton/task/git-clone
+via kubectl mainfiest file: kubectl apply -f https://api.hub.tekton.dev/v1/resource/tekton/task/git-clone/0.9/raw
+via tkn cli: tkn hub install task git-clone
