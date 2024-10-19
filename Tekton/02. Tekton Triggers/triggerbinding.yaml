@@ -1,0 +1,10 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: TriggerBinding
+metadata:
+  name: cd-triggerbinding
+spec:
+  params:
+    - name: repository
+      value: "$(body.repository.url)"
+    - name: branch
+      value: "$(body.ref)"

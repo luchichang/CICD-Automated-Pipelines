@@ -1,0 +1,54 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: cd-pipeline
+spec:
+  params:
+    - name: repo-url
+    - name: branch
+      default: "master"
+  tasks:
+    - name: clone
+      taskRef: 
+        name: checkout-task
+      params:
+        - name: repo-url
+          value: "$(params.repo-url)"
+        - name: branch
+          value: "$(params.branch)"
+
+    - name: lint
+      taskRef:
+        name: echo-task
+      params:
+        - name: echo-message
+          value: " Linting Task"
+      runAfter:
+        - clone
+    
+    - name: test
+      taskRef:
+        name: echo-task
+      params:
+        - name: echo-message
+          value: "test "
+      runAfter: 
+        - lint
+
+    - name: build
+      taskRef:
+        name: echo-task
+      params:
+        - name: echo-message
+          value: " building task"
+      runAfter:
+        - test
+
+    - name: deploy
+      taskRef:
+        name: echo-task
+      params:
+        - name: echo-message
+          value: "Deployment Task"
+      runAfter: 
+        - build

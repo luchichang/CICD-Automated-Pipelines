@@ -11,16 +11,7 @@
 
 ## Environment-Setup
 
-* Create the Kubernetes cluster 
-* install kubectl
-* install tekton pipeline inside the k8s cluster by following the instructions in the below link
-```bash
-https://tekton.dev/docs/installation/pipelines/
-```
-* Clone the repository 
-```bash
-  git clone https://github.com/luchichang/CICD-Automated-Pipelines.git
-```
+* Follow the instructions in the main readme for creating k8s cluster, kubectl installation, cluster management tool installation. 
 * Navigate to the project directory
 ```bash
   cd CICD-Automated-Pipelines/Tekton/01. Tekton Base Pipeline
