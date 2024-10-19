@@ -6,6 +6,9 @@
 ## what is CD
 
 
+![image](https://github.com/user-attachments/assets/2dca9bb9-89e5-4cfb-80af-eea001f87c0c)
+
+
 ## Environment setup 
 * Create the Kubernetes cluster 
 * install kubectl
