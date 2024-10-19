@@ -1,5 +1,5 @@
 apiVersion: triggers.tekton.dev/v1beta1
-kind: EventListener
+kind: EventListener # CRD Name
 metadata: 
   name: cd-eventlistener
 spec:

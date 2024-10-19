@@ -11,6 +11,17 @@
 - Event Listener
 - Trigger Binding 
 - Trigger Template 
+- Service Account
+- Pipeline Run
+- Task Run
+
+### Tekton Triggers
+![Tekton Triggers](image-2.png)
+
+### Tekton Trigger Workflow
+![tekton trigger workflow](image-1.png)
+
+___how does Event listener understands the type of event it looks for___
 
 ## steps,
   * create the tasks
@@ -45,3 +56,33 @@
     ```bash
        tkn triggerbinding list
     ```
+  * Create the Trigger Template
+    ```bash
+       kubectl apply -f triggertemplate.yaml
+    ``` 
+  * list the created Trigger Template
+    ```bash
+       tkn triggertemplate list
+          #or
+       tkn tt ls
+    ```
+
+## run the pipeline with event trigger 
+* portforward the local host port to the pod
+```bash
+  kubectl port-forward service/el-cd-eventlistener 8090:8080
+```
+* use the curl command to run as a specific event so that event listener looks into it
+```bash
+  curl -X POST http://localhost:8090 <forwarded port> -H 'content-type=application/json' -d '{"ref":"main","repository":{"url":"https://github.com/ibm-developer-skills-network/wtecc-CICD_PracticeCode"}}'
+```
+
+This should start a PipelineRun. You can check on the status with this command:
+```bash
+  tkn pipelinerun ls
+```
+
+You can also examine the PipelineRun logs using this command (the -L means "latest" so that you do not have to look up the name for the last run):
+```bash
+  tkn pipelinerun logs --last
+```
