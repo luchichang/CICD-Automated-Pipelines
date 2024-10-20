@@ -1,0 +1,79 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: echo
+spec:
+  description: this task will echo the message which is obtained from the parameter during pipelinerun
+  params:
+    - name: message
+      description: The message to echo
+      type: string
+  steps:
+    - name: echo-message
+      image: alpine:3
+      command: [/bin/echo]
+      args: ["$(params.message)"]
+
+---
+
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: cleanup
+spec:
+  description: this task will cleanup the workspace by deleting all the files in the workspace
+  workspaces:
+    - name: source # referencing the workspace name 
+  steps:
+    - name: remove
+      image: alpine:3
+      env: # environment variables used inside the task image
+        - name: WORKSPACE_SOURCE_PATH
+          value: $(workspaces.source.path)
+      workingDir: $(workspaces.source.path)
+      securityContext:
+        runAsNonRoot: false
+        runAsUser: 0
+      script: | # why pipe symbol is used?
+        #!/usr/bin/env sh
+        set -eu 
+        echo "Removing files from the ${WORKSPACE_SOURCE_PATH} directory"
+        # Delete any existing contents of the directory if it exists.
+        #
+        # We don't just "rm -rf ${WORKSPACE_SOURCE_PATH}" because ${WORKSPACE_SOURCE_PATH} might be "/"
+        # or the root of a mounted volume.
+        if [ -d "${WORKSPACE_SOURCE_PATH}" ]; then
+          # deleting non hidden files and directories
+          rm -rf "${WORKSPACE_SOURCE_PATH}"/*
+          # deleting the hidden files
+          rm -rf "${WORKSPACE_SOURCE_PATH}"/.[!.]*
+          # deleting files and directories starting with .. plus any other character
+          rm -rf "${WORKSPACE_SOURCE_PATH}"/..?*
+        fi
+
+---
+
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: nose
+spec:
+  workspaces:
+    - name: source
+  params:
+    - name: args
+      description: arguments to pass for the nosetest
+      type: array
+      default: ["-v"] 
+  steps:
+    - name: nosetest
+      image: python:3.9-slim
+      workingDir: $(workspaces.source.path)
+      script: | 
+        #!/bin/bash
+        set -e 
+        python -m pip install --upgrade pip wheel
+        pip install -r requirements.txt
+        nosetests "$@"
+      args: ["$(params.args[*])"]
+
