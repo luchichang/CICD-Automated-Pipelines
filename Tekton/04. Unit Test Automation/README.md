@@ -10,7 +10,7 @@
 - create a test task from the scratch and use it in the pipeline 
 
 
-![parallel running Tekton Tasks](image.png)
+![parallel running Tekton Tasks](./assets/image.png)
 
 ## Pre-requisite
 

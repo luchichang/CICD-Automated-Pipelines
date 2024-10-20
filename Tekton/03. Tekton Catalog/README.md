@@ -15,7 +15,7 @@
 - Persistent Volume Claim
 - Name Spaces
 
-![Persistent Volume](image.png)
+![Persistent Volume](./assets/image.png)
 
 NOTE: for creating workspace in Persistent volume claim we need to create storage class first so it can be referenced in the __storageClassName__ in the pvc 
 

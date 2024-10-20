@@ -16,10 +16,10 @@
 - Task Run
 
 ### Tekton Triggers
-![Tekton Triggers](image-2.png)
+![Tekton Triggers](./assets/image-2.png)
 
 ### Tekton Trigger Workflow
-![tekton trigger workflow](image-1.png)
+![tekton trigger workflow](./assets/image-1.png)
 
 ___how does Event listener understands the type of event it looks for___
 
