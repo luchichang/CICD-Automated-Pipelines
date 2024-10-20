@@ -9,6 +9,9 @@
 * Apply Parameters to task and pipeline
 * Apply additional parameters to a pipeline to clone a github repository
 
+### Tekton Architecture
+![Tekton Architecture](./assets/image.png)
+
 ## Environment-Setup
 
 * Follow the instructions in the main readme for creating k8s cluster, kubectl installation, cluster management tool installation. 
