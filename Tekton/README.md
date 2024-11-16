@@ -10,7 +10,7 @@
 
 
 ### CD Pipeline
-![Pipeline Stages](image.png)
+![Pipeline Stages](assets/image.png)
 
 ## Environment setup 
 * Create the Kubernetes cluster 
